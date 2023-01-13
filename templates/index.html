@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <meta property="og:title" content="True Damage Fanbook" />
+    <meta property="og:description" content="You can give support or suggestion here on comment" />
+    <meta property="og:image" content="{{ url_for('static', filename='true_damage_image_small.jpg') }}" />
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -61,13 +65,14 @@
         .my-card .card {
             margin-top: 10px;
             margin-bottom: 10px;
-        } 
+        }
     </style>
     <script>
         $(document).ready(function () {
             set_temp();
             show_comment();
         });
+
         function set_temp() {
             $.ajax({
                 type: "GET",
@@ -78,6 +83,7 @@
                 }
             })
         }
+
         function save_comment() {
             let name = $('#name').val();
             let comment = $('#comment').val();
@@ -95,6 +101,7 @@
                 }
             })
         }
+
         function show_comment() {
             $('#comment-list').empty();
             $.ajax({
@@ -139,7 +146,8 @@
             <textarea class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
             <label for="floatingTextarea">Fan Massage</label>
         </div>
-        <center><button onclick="save_comment()" type="button" class="btn btn-dark">Leave a Fan Message</button></center>
+        <center><button onclick="save_comment()" type="button" class="btn btn-dark">Leave a Fan Message</button>
+        </center>
     </div>
 
     <div class="my-card" id="comment-list">
